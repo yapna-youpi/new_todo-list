@@ -1,51 +1,3 @@
-   const erreur = 'veuillez assigner une tache!';
-   var  input = document.getElementById('valeur'),
-        eror = 'veuillez remplir le champ!';
-
-//--creation des elements html--
-const div1 = document.createElement('div'),
-      div2 = document.createElement('div'),
-      champ = document.createElement('input'),
-      btn1 = document.createElement('button'),
-      btn2 = document.createElement('button');
-      mot1 = document.createElement('span');
-      image1 = document.createElement('img');
-
-//--attribution des styles--
-div1.class = 'modal_content';
-div2.class = 'item';
-champ.type = 'text';
-champ.className = 'item_input';
-champ.placeholder= 'a faire...';
-champ.getCom
-btn1.innerHTML = 'faire';
-btn1.className = 'edit_btn';
-btn1.className = 'btn';
-btn2.className = 'remove_btn';
-btn2.className = 'btn';
-mot1.class = 'style2';
-image1.src= 'img/remove.ico';        
-champ.innerText='moi je suis beau';
-
-//--action d'inserer les elements dans le DOM--
-   btn1.appendChild(mot1);
-   btn2.appendChild(image1);
-   div2.appendChild(champ);
-   div2.appendChild(btn1);
-   div2.appendChild(btn2);
-   div1.appendChild(div2);
-
-  
-  
-   
-   
-   
-   
-
-
-      
-      
-
 
 
 //-- ouvrir le mopdal-- 
@@ -56,10 +8,26 @@ document.querySelector(".style_input").addEventListener('focus' , function() {
     document.querySelector('.dialog').style.display = 'flex'; 
 })
 
+
 //--fermer le modal--
 document.querySelector('.close').addEventListener('click' , function() {
     document.querySelector('.dialog').style.display = 'none';
+    document.querySelector('.erreur').innerHTML = " ";
 });
+
+
+//--suppresion des elements cliquer
+document.querySelector('img').addEventListener('.button' , function() {
+    div1.remove();
+},false);
+
+
+
+
+
+// class manipulable
+
+
 
 //--button submit du modal--
 document.querySelector('.button').addEventListener('click' , function() {
@@ -70,13 +38,83 @@ document.querySelector('.button').addEventListener('click' , function() {
     if(!val){
         document.querySelector('.erreur').style.color= 'red';
         document.querySelector('.erreur').innerHTML = eror;
-    }else{
-        document.querySelector('.dialog').style.display = 'none';
-        document.querySelector('li').appendChild(div1);
-        }
-      
-    
-    
+    }
+    else{
 
-})
+        // if(localStorage.length<=0){
+
+        // }
+    
+        document.querySelector('.dialog').style.display = 'none';
+        document.querySelector('.erreur').innerHTML = " ";
+
+
+
+
+
+        class item{
+
+            constructor(item_name){
+                this.creatediv(item_name);
+            }
+            creatediv(item_name){
+                let inpute = document.createElement('input');
+                inpute.value = item_name;
+                inpute.disable = true;
+                inpute.classList.add('item_input');
+                inpute.type = "text";
+        
+                let inbox = document.createElement('div');
+                inbox.classList.add('item');
+        
+                let editbtn = document.createElement('button');
+                editbtn.classList.add('edit_btn');
+                let check = document.createElement('input');
+                check.type = 'checkbox';
+                check.style.height = '15px';
+                editbtn.appendChild(check);
+        
+        
+        
+                let removbtn = document.createElement('button');
+                let image1 = document.createElement('img');
+                removbtn.classList.add('remove_btn');
+                image1.src= 'img/remove.ico';
+                removbtn.appendChild(image1);
+                
+        
+              
+                
+        
+                inbox.appendChild(inpute);
+        
+                inbox.appendChild(editbtn);
+                inbox.appendChild(removbtn);
+                document.querySelector('.input_div').parentNode.appendChild(inbox);
+        
+                editbtn.addEventListener('click' , function edit(input) {
+                    input.disabled = !input.disabled
+                },false);
+        
+                removbtn.addEventListener('click' , function (){
+                    document.querySelector('.input_div').parentNode.removeChild(inbox);
+                },false);
+                
+                  
+                
+        
+                
+                
+        
+        
+            }
+        
+        }
+        new item(val);
+        
+    }
+
+});
+
+
 

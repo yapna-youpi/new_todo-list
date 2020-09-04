@@ -5,15 +5,15 @@ body::before,body::after{
     box-sizing: border-box;
 }
 .container-fluid{
-    background: BLACK;width: 100%;height: 100%;  position: absolute;top: 0;left: 0;align-items: center;
+    background: #000;width: 100%;height: 100%;  position: absolute;top: 0;left: 0;align-items: center;
     display: flex;justify-content: center;background-size: cover;opacity: 1;
 }
 img{
     height: 22px;
 }
 h1{
-    font-size: 3rem;
-    margin: 1rem 0 1.5rem;
+    font-size: 5rem;
+    margin: 10rem 0 1.5rem;
     text-align: center;
     color: #fff;  
 }
@@ -29,7 +29,7 @@ h1{
 }
 .input_div{
     width: 100%;display: flex;justify-content: center;align-items: center;margin-bottom: 1.5rem;margin-left: auto;margin-right: auto;
-    width: 43%;
+    width: 43%;flex-wrap: wrap;
 }
 .row{
     width: 100%;height: 100%;
@@ -39,8 +39,27 @@ h1{
     margin: 0.25rem;border-radius: 25px;
 }
 .add{
-    height: 50px;width: 100px;border-radius: 25px;outline: none;border: none;background-color: #fff;color: lime;margin: 0.25px;
+    height: 50px;width: 50px;border-radius: 25px;outline: none;border: none;background-color: #fff;color: lime;margin: 0.25px;
     background-color: lime;
+}
+.set{
+    height: 50px;width: 50px;border-radius: 25px;outline: none;border: none;background-color: #fff;color: lime;margin: 5px;
+    background-color: red;
+}
+.allcheck{
+    height: 50px;width: 50px;border-radius: 25px;outline: none;border: none;background-color: #fff;color: lime;margin: 5px;
+    background-color: yellowgreen ;
+}
+.uncheck{
+    height: 50px;width: 50px;border-radius: 25px;outline: none;border: none;background-color: #fff;color: lime;margin: 5px;
+    background-color:  rgba(235, 4, 127, 0.959);
+
+}
+.allcheck:hover{
+    opacity: 0.7;
+}
+.uncheck:hover{
+    opacity: 0.7;
 }
 .styl{
     width: 100%;
@@ -48,27 +67,34 @@ h1{
 .add:hover{
     opacity: 0.7;
 }
+.set:hover{
+    opacity: 0.7;
+}
 .modal_content{
-    display: flex;justify-content: center;align-items: center;flex-direction: center;text-align: center;margin-top: 0.5rem;
+    display: flex;justify-content: center;align-items: center;flex-direction: center;text-align: center;margin:1rem;
 }
 .item{
-    padding: 0.5rem;margin-bottom: 1.5rem;border-bottom: 4px solid #fff;
+    padding: 0.5rem;margin-bottom: 1.5rem;border-bottom: 4px solid #fff;width: 430px;display: flex;
+    margin-left: auto;margin-right: auto;
 }
 .item_input{
     background: none;outline: none;color: #fff;border: none;width: 350px;font-size: 1.4rem;
 }
-.edit_btn{
-    font-size: 1.4rem;margin: 0 0.75rem;font-family: impact;background: none;outline: none;border: none;
-}
 .remove_btn{
-color: red;border: none;outline: none;background: none;
+    font-size: 1.5rem;font-family: impact;background:none;width: 30px;float: left;
+    outline: none;border: none;color: white;
+
+}
+.edit_btn{
+color: white;border: none;outline: none;background: none;margin-right: 10px;
+float:left;font-size: 1.2rem;width: 30px;
 }
 .dialog{
-    width: 100%;height: 100%;position: absolute;top: 0;display: none;
+    width: 100%;height: 85%;position: absolute;top: 0;display: none;z-index: 7;
     background-color: rgba(255, 255, 255, 0.7);left: 0;padding-top: 150px;
 }
 .dialog_content{
-    width: 580px;height: 300px;background-color: #000;border: 2px solid white;  margin: 0 auto;border-radius: 10px;text-align: center;
+    width: 580px;height: 310px;background: url(../img/eau_nature.jpg);border: 2px solid white;  margin: 0 auto;border-radius: 10px;text-align: center;
     position: relative;padding-top: 10px;opacity: 1;
 }
 .close{
@@ -86,7 +112,7 @@ color: red;border: none;outline: none;background: none;
     height: 50px;width: 70px;border-radius: 25px;outline: none;border: none;color:;background-color: lime;
 }
 .dialog_content button:hover{
-    height: 50px;width: 70px;border-radius: 25px;outline: none;border: none;opacity: 0.5;
+    height: 50px;width: 70px;border-radius: 25px;outline: none;border: none;opacity: 0.7;
 }
 .dialog_content .stylo{
     color: lime;
@@ -94,3 +120,74 @@ color: red;border: none;outline: none;background: none;
 ul{
     list-style-type: none;
 }
+.edit_btn{
+    float: right;
+}
+
+
+
+
+.cad img{
+    z-index:2;
+}
+.ico_lig{
+    flex-wrap: wrap;z-index: 5;width:75px;display: inline;position: absolute;right: 0;top: 200px;
+    box-sizing: border-box;
+}
+.cad{
+    width: 40px;height: 40px;background-color:rgba(255, 255, 255, 0.1);margin: 15px;
+    display: flex;justify-content: center;align-items: center;border-radius: 50%;
+    overflow: hidden;flex-wrap: wrap;position: relative;
+}
+.col1{
+    width: 40px;height: 40px;background-color: royalblue;display: block;
+    position: absolute;top: -60px;z-index:1;transition: 0.4s;
+}
+.col2{
+    width: 60px;height: 60px;background-color: deepskyblue;display: block;
+    position: absolute;top: -60px;z-index:1;transition: 0.4s;
+}
+.col3{
+    width: 60px;height: 60px;background-color: rgb(10, 209, 10);display: block;
+    position: absolute;top: -60px;z-index:1;transition: 0.4s;
+}
+.col4{
+    width: 60px;height: 60px;background-color: purple;display: block;
+    position: absolute;top: -60px;z-index:1;transition: 0.4s;
+}
+.cad:hover  .col1{
+   top: 0;
+}
+.cad:hover  .col2{
+    top: 0;
+}
+.cad:hover  .col3{
+   top: 0;
+}
+.cad:hover  .col4{
+    top: 0;
+}
+.logo{
+    width: 100%;height: 5rem;background-image: url(../img/logo.png);background-repeat: unset;
+}
+
+
+@media only screen and  (max-width:550px){
+    .ico_lig{
+        flex-wrap: wrap;width:75px;display: inline;position: absolute;;top: 280px;
+        box-sizing: border-box;
+    }
+    .cad{
+        width: 40px;height: 40px;background-color:rgba(255, 255, 255, 0.1);margin: 9px;
+        display: flex;justify-content: center;align-items: center;border-radius: 50%;
+        overflow: hidden;flex-wrap: wrap;position: relative;
+    }
+    h1{
+        font-size: 3.5rem;
+        margin: 10rem 0 1.5rem;
+        text-align: center;
+        color: #fff;  
+    }
+}
+
+
